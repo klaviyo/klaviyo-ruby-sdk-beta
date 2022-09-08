@@ -15,8 +15,6 @@ require 'time'
 
 module KlaviyoBeta
   class MetricAggregateQueryAsSubResource
-    attr_accessor :id
-
     attr_accessor :type
 
     attr_accessor :attributes
@@ -46,7 +44,6 @@ module KlaviyoBeta
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'id' => :'id',
         :'type' => :'type',
         :'attributes' => :'attributes'
       }
@@ -60,7 +57,6 @@ module KlaviyoBeta
     # Attribute type mapping.
     def self.openapi_types
       {
-        :'id' => :'String',
         :'type' => :'String',
         :'attributes' => :'MetricAggregateQueryAsSubResourceAttributes'
       }
@@ -87,10 +83,6 @@ module KlaviyoBeta
         h[k.to_sym] = v
       }
 
-      if attributes.key?(:'id')
-        self.id = attributes[:'id']
-      end
-
       if attributes.key?(:'type')
         self.type = attributes[:'type']
       end
@@ -104,10 +96,6 @@ module KlaviyoBeta
     # @return Array for valid properties with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @id.nil?
-        invalid_properties.push('invalid value for "id", id cannot be nil.')
-      end
-
       if @type.nil?
         invalid_properties.push('invalid value for "type", type cannot be nil.')
       end
@@ -122,7 +110,6 @@ module KlaviyoBeta
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @id.nil?
       return false if @type.nil?
       type_validator = EnumAttributeValidator.new('String', ["metric-aggregate"])
       return false unless type_validator.valid?(@type)
@@ -145,7 +132,6 @@ module KlaviyoBeta
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          id == o.id &&
           type == o.type &&
           attributes == o.attributes
     end
@@ -159,7 +145,7 @@ module KlaviyoBeta
     # Calculates hash code according to all attributes.
     # @return [Integer] Hash code
     def hash
-      [id, type, attributes].hash
+      [type, attributes].hash
     end
 
     # Builds the object from hash
