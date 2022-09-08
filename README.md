@@ -2,7 +2,7 @@
 
 ***Note: If you would like to request beta access to the new APIs, please [fill out this brief form](https://manage.kmail-lists.com/subscriptions/subscribe?a=9BX3wh&g=VSyTC6) and you will be contacted by Klaviyo's product team once the beta release is available.***
 
-- SDK version: 1.0.0.20220907
+- SDK version: 1.0.1.20220907
 
 ## Helpful Resources
 
@@ -70,13 +70,13 @@ gem build klaviyo_sdk_beta.gemspec
 Then install the gem locally:
 
 ```shell
-gem install ./klaviyo_sdk_beta-1.0.0.20220907.gem
+gem install ./klaviyo_sdk_beta-1.0.1.20220907.gem
 ```
 
 
 Finally add this to the Gemfile:
 
-    gem 'klaviyo_sdk_beta', '~> 1.0.0.20220907'
+    gem 'klaviyo_sdk_beta', '~> 1.0.1.20220907'
 
 To install directly from rubygems:
 
@@ -94,7 +94,7 @@ require 'klaviyo_sdk_beta'
 
 # Setup authorization
 KlaviyoBeta.configure do |config|
-  config.api_key['Klaviyo-API-Key'] = 'Klaviyo-API-Key your-api-key'
+  config.api_key['Klaviyo-API-Key'] = 'your-api-key'
   #config.max_retries = 5 # optional
   #config.max_delay = 60 # optional
 end
