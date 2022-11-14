@@ -51,3 +51,7 @@ Gemfile
 .rspec
 .rubocop.yml 
 git_push.sh
+.gitlab-ci.yml
+
+# macOS
+.DS_Store
